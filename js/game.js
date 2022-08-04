@@ -46,3 +46,9 @@ $("table td").click(function(){
         $(this).removeClass("clicked") 
     }
 }) 
+
+$(function(){
+    $('.again').click(function(){
+        location.reload();
+    })
+})
