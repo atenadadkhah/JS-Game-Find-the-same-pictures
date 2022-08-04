@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules/jquery/dist/jquery.js" ></script>
+    <script src="js/game.js" defer></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        table td{
+            width: 80px;
+            height: 80px;
+            border: 1px solid rgb(151, 150, 150);
+            border-radius: 4px;
+            background-color: rgb(201, 198, 198);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2px;
+            cursor: pointer;
+            animation: hideTd 1000ms ease 2.5s  forwards;
+        }
+ 
+        table{
+            margin: 80px auto;
+        }
+        td img{
+            width: 70%;
+            height: 70%;
+            display: block;
+            animation: hideImage 200ms ease 2.5s  forwards;
+            display: inherit;
+            position: relative;
+        }
+        @keyframes hideTd {
+            0%{
+                transform: rotateY(0deg);
+                background-color: rgb(201, 198, 198);
+                border-color: rgb(151, 150, 150);
+            }
+           
+            100%{
+                transform: rotateY(180deg);
+                background-color: rgb(218, 216, 216);
+                border-color: rgb(138, 138, 138);
+            }
+        }
+        @keyframes hideImage {
+            0%{
+                 display: inherit;
+                visibility: visible; 
+            }
+            
+            100%{
+                 display: none;
+                visibility: hidden; 
+            }
+        }
+        .clicked,.clicked-true{
+            animation: showTd 600ms ease-out 0s  forwards;
+            background-color: rgb(201, 198, 198);
+                border-color: rgb(151, 150, 150);
+        }
+        @keyframes showTd {
+            0%{
+                transform: rotateY(180deg);
+            }
+           
+            100%{
+                transform: rotateY(0deg);    
+            }
+        }
+        .clicked img, .clicked-true img{
+            animation: showImage 600ms ease-out 0s  forwards;
+        }
+        @keyframes showImage {
+            0%{
+                display: none;
+                visibility: hidden; 
+                 
+            }
+            
+            100%{
+                display: inherit;
+                visibility: visible;   
+            }
+        }
+        .hide{
+            animation: hiddenTd 600ms ease-out 2.5s  forwards;
+            border-color: rgb(241, 68, 68);
+            background-color: rgb(218, 216, 216);
+            
+        }
+        @keyframes hiddenTd {
+            0%{
+                transform: rotateY(180deg);
+                border-color: rgb(241, 68, 68);  
+                
+                
+            }
+           
+            100%{
+                transform: rotateY(0deg);  
+                border-color: rgb(138, 138, 138);
+
+            }
+        }
+        .hide img{
+            animation: hiddenImage 600ms ease-out 2s  forwards;
+        }
+        @keyframes hiddenImage {
+            0%{
+                display: inherit;
+                visibility: visible;    
+                 
+            }
+            
+            100%{
+                display: none;
+                visibility: hidden;
+            }
+        }
+
+    </style>
+</head>
+<body>
+   
+    <div class="table">
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
